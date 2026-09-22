@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+/* 1. Definição das cores */
+:root {
+  --background: #f7f9ff;
+  --background-alt: #f1f4f9;
+  --background-header: #f7f9ff;
+  --background-footer: #f1f4f9;
+
+  --background-detail: #e8ecf4;
+  --background-card: #ffffff;
+  --background-form: #ffffff;
+  --background-input: #eef2f7;
+
+  --text-title: #01212e;
+  --text-title-detail: #fdcbb1;
+  --text-main: #42474b;
+  --text-muted: #59636c;
+  --text-detail: #994703;
+
+  --primary: #994703;
+  --primary-hover: #7a3802;
+  --accent: #01212e;
+  --border: #d4dcde;
+}
+
+/* 2. Mapeamento para o Tailwind usando @theme inline */
+@theme inline {
+  --color-background: var(--background);
+  --color-background-alt: var(--background-alt);
+  --color-background-header: var(--background-header);
+  --color-background-footer: var(--background-footer);
+  --color-background-detail: var(--background-detail);
+  --color-background-card: var(--background-card);
+  --color-background-form: var(--background-form);
+  --color-background-input: var(--background-input);
+
+  --color-text-title: var(--text-title);
+  --color-text-title-detail: var(--text-title-detail);
+  --color-text-main: var(--text-main);
+  --color-text-muted: var(--text-muted);
+  --color-text-detail: var(--text-detail);
+
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-accent: var(--accent);
+  --color-border: var(--border);
+
+  /* Configuração rigorosa das fontes escolhidas */
+  --font-playfair: var(--font-playfair);
+  --font-jakarta: var(--font-jakarta);
+
+  --max-site-width: 1440px;
+  --side-padding: 1.5rem;
+}
+
+/* 3. Camada base e aplicação das tipografias por tag */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+  }
+
+  body {
+    @apply bg-background text-text-main antialiased font-sans;
+    font-family: var(--font-jakarta), sans-serif;
+  }
+
+  .wrapper {
+    @apply w-full max-w-(--max-site-width) mx-auto px-(--side-padding);
+  }
+
+  /* Títulos H1 a H6 com Playfair Display */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-playfair), serif;
+    @apply text-text-title font-bold tracking-tight;
+  }
+
+  /* 4. Scrollbar Personalizada */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary) var(--background-detail);
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--background-detail);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--primary);
+    border-radius: 9999px;
+    border: 2px solid var(--background-detail);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: var(--text-muted);
+  }
+}
