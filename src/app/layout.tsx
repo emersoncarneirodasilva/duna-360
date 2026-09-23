@@ -18,7 +18,7 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://duna360.com.br"), // Substitua pela URL de produção oficial quando tiver
+  metadataBase: new URL("https://duna-360.pages.dev"),
   title: {
     default:
       "Duna 360º | Passeios de Buggy Exclusivos no Litoral Norte de Natal",
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "pt_BR",
-    url: "https://duna360.com.br", // Substitua pela URL de produção oficial quando tiver
+    url: "https://duna-360.pages.dev",
     title: "Duna 360º | Passeios de Buggy Exclusivos em Natal - RN",
     description:
       "Explore as belezas do litoral norte potiguar com roteiros autorais, conforto e atendimento sob medida. Reserve sua expedição privativa.",
